@@ -1,0 +1,72 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  Xcolor: #464646;
+  Xfont: 400 100%/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
+}
+
+.wrapper, .row {
+    height: 100%;
+    margin-left:0;
+    margin-right:0;
+}
+
+.wrapper:before, .wrapper:after,
+.column:before, .column:after {
+		    content: "";
+		    display: table;
+		}
+
+.wrapper:after,
+.column:after {
+    clear: both;
+}
+
+.box {
+    bottom: 0; /* increase for footer use */
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color:#444444;
+}
+#main {
+    background-color:#e9eaed;
+    padding-left:0;
+    padding-right:0;
+}
+
+/*
+ * off canvas sidebar
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 768px) {
+    .row-offcanvas {
+	position: relative;
+	-webkit-transition: all 0.25s ease-out;
+	-moz-transition: all 0.25s ease-out;
+	transition: all 0.25s ease-out;
+    }
+    
+    .row-offcanvas-left.active {
+	left: 33%;
+    }
+    
+    .row-offcanvas-left.active .sidebar-offcanvas {
+	left: -33%;
+	position: absolute;
+	top: 0;
+	width: 33%;
+	margin-left: 5px;
+	Xborder:1px solid red;
+    }
+    
+    #sidebar, #sidebar a, #sidebar-footer a {
+	padding-left:3px;
+    }
+}

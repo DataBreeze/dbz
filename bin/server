@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+const path = require('path');
+
+const NODE_ENV = process.env.NODE_ENV || 'development';
+global.__DEV__ = NODE_ENV !== 'production';
+global.__PROD__ = NODE_ENV === 'production';
+global.__SERVER__ = true;
+global.__CLIENT__ = false;
+
+if (global.__DEV__) {
+  require('babel-register');
+  require('../webpack.server');
+}
+
+const basePath = path.resolve(__dirname, __DEV__ ? '../src' : '../lib');
+const WebpackTools = require('webpack-isomorphic-tools');
+const webpackToolsConfig = require('../webpack.isomorphic.tools');
+const port = 3000;
+global.webpackTools = new WebpackTools(webpackToolsConfig)
+  .development(global.__DEV__)
+  .server(basePath, () => {
+    const server = require(basePath)
+    server.listen(port, () => {
+      console.info('Server is running on port ' + port);
+    });
+  });
