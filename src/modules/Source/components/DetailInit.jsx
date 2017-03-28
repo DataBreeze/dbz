@@ -13,6 +13,7 @@ class DetailInit extends React.Component {
   }
   componentWillReceiveProps(next) {
     if (next.dirtyOne) {
+      // record has changed, force a refetch
       const source = next.params.source;
       const r = next.record;
       const p = { source, id: r.id };
@@ -21,10 +22,12 @@ class DetailInit extends React.Component {
   }
   shouldComponentUpdate(next) {
     if (next.newUpload) {
+      // after a new file has been uploaded
+      // cancel render and refetch record
       const source = this.props.params.source;
       const r = next.record;
       const p = { source, id: r.id };
-      this.props.dispatch(Act.setNewUpload({ source, newUpdate: false }));
+      this.props.dispatch(Act.setNewUpload({ source, newUpload: false }));
       this.props.dispatch(Act.loadRecord(p));
       return false;
     } else if (next.dirtyOne) {
@@ -75,7 +78,7 @@ const mapStateToProps = (state) => {
     stats: cs.stats,
     csCfg: cs.cfg,
     cfg: state.app.cfg,
-    newUpload: Act.getNewUpload(state),
+    newUpload: cs.newUpload,
     msg: cs.detailMsg,
     msgType: cs.detailMsgType,
     permitEdit: (userId === recUserId),
