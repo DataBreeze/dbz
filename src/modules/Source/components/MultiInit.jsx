@@ -62,6 +62,7 @@ MultiInit.propTypes = {
   dispatch: React.PropTypes.func.isRequired,
   params: React.PropTypes.object.isRequired,
 };
+
 MultiInit.onEnter = (store, nextState) => {
   // only way to fetch new data is route change
   const source = nextState.params.source || 'spot';
