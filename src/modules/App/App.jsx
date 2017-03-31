@@ -11,11 +11,10 @@ import Auth from './components/Auth';
 // class App extends React.Component {
 // render() {
 const App = (props) => {
-  const styles = require('./App.scss');
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.box}>
-        <div className={`${styles.row} ${styles['row-offcanvas']} ${styles['row-offcanvas-left']}`}>
+    <div className="wrapper">
+      <div className="box">
+        <div className="row row-offcanvas row-offcanvas-left">
           <SideBar params={props.params} />
           <div className="column col-sm-10 Xcol-xs-11" id="main">
             <HeadBar params={props.params} />
@@ -33,6 +32,7 @@ App.propTypes = {
   children: React.PropTypes.element.isRequired,
   params: React.PropTypes.object.isRequired,
 };
+
 
 App.onEnter = (store, nextState) => {
   const params = nextState.params;
