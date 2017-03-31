@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
 import { msgShow } from './userActions';
-import { isServerSide } from '../lib/fbLib';
+import { isServerSide } from '../dbz/fbLib';
 
 require('es6-promise').polyfill();
 

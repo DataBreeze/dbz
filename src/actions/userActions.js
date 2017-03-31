@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 // require('es6-promise').polyfill();
 import FormData from 'form-data';
-import { isServerSide } from '../lib/fbLib';
+import { isServerSide } from '../dbz/fbLib';
 
 export const INIT_USER = 'INIT_USER';
 
