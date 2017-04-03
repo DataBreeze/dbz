@@ -28,11 +28,11 @@ const Html = (props) => {
         <meta charSet="UTF-8" />
         {helmet && helmet.title.toComponent()}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="http://localhost/css/lib/bootstrap.css" />
-        <link rel="stylesheet" href="http://localhost/css/lib/font-awesome.css" />
-        <link rel="stylesheet" href="http://localhost/css/lib/vesper-icons.css" />
-        <link rel="stylesheet" href="http://localhost/css/lib/image-gallery.css" />
-        <link rel="stylesheet" href="http://localhost/css/dbz.css" />
+        <link rel="stylesheet" href="/css/lib/bootstrap.css" />
+        <link rel="stylesheet" href="/css/lib/font-awesome.css" />
+        <link rel="stylesheet" href="/css/lib/vesper-icons.css" />
+        <link rel="stylesheet" href="/css/lib/image-gallery.css" />
+        <link rel="stylesheet" href="/css/dbz.css" />
         {Object.keys(styles).map(key => (
           <link key={key} rel="stylesheet" href={styles[key]} />
          ))}
