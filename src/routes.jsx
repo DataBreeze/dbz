@@ -35,9 +35,11 @@ const attachOnEnterHooks = store => ({ routes: [rootRoute] }) => {
 
 const configureRoutes = (store) => {
   const onEnter = (__SERVER__ ? fetchData(store) : attachOnEnterHooks(store));
+  const state = store.getState();
+  const defaultSource = state.source.defaultSource || 'user';
   return (
     <Route path="/" component={App} onEnter={onEnter}>
-      <IndexRedirect to="guide" />
+      <IndexRedirect to={defaultSource} />
       <Route path=":source" component={Source}>
         <IndexRoute component={MultiInit} />
         <Route path="reset/(:token)" component={MultiInit} />
