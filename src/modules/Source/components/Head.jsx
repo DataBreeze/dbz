@@ -45,7 +45,7 @@ class Head extends React.Component {
     if (search) {
       searchCancel = <button className="btn btn-default red" type="button" onClick={this.searchClear}><i className="fa fa-times" /></button>;
     }
-    const showNewBut = (cs.cfg.view && (cs.cfg.view['new'] === false)); // eslint-disable-line dot-notation
+    const noShowNewBut = (cs.cfg.view && (cs.cfg.view['new'] === false)); // eslint-disable-line dot-notation
     const buts = [];
     if (source === 'photo') {
       buts.push(<Link key="9" className="btn btn-primary btn-sm" to={{ pathname: url, query: { listview: 'gallery' } }} ><i className="fa fa-picture-o" />Gallery</Link>);
@@ -53,7 +53,7 @@ class Head extends React.Component {
     buts.push(<Link key="1" className="btn btn-primary btn-sm" to={{ pathname: url, query: { listview: 'icon' } }}><i className="fa fa-th-large" />Index</Link>);
     buts.push(<Link key="2" className="btn btn-primary btn-sm" to={{ pathname: url, query: { listview: 'list' } }} ><i className="fa fa-list" />List</Link>);
     buts.push(<Link key="3" className="btn btn-primary btn-sm" to={{ pathname: urlFirst }}><i className="fa fa-info" />Detail</Link>);
-    if (showNewBut) {
+    if (!noShowNewBut) {
       buts.push(<Link key="4" className="btn btn-primary btn-sm" to={urlNew}><i className="fa fa-plus" />New</Link>);
     }
     return (
