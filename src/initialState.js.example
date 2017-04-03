@@ -26,6 +26,7 @@ export default {
     showLoginNew: false,
     key: 'value',
   },
+  defaultSource: 'spot',
   source: {
     sources: {
       current: { source: 'all' },
