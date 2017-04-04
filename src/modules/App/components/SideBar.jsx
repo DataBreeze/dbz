@@ -9,8 +9,10 @@ class SideBar extends React.Component { // eslint-disable-line react/prefer-stat
     const menusNoLabels = [];
     const sources = MenuList(this.props.sources);
     sources.forEach((source) => {
-      menus.push(<li key={source.source}><Link to={`/${source.source}`}><i className={source.cfg.iconClass} aria-hidden="true" />{source.cfg ? source.cfg.titlePlural : 'None'}</Link></li>);
-      menusNoLabels.push(<li key={source.source}><Link to={`/${source.source}`}><i className={source.cfg.iconClass} aria-hidden="true" /></Link></li>);
+      if(source.cfg){
+	menus.push(<li key={source.source}><Link to={`/${source.source}`}><i className={source.cfg.iconClass} aria-hidden="true" />{source.cfg.titlePlural}</Link></li>);
+	menusNoLabels.push(<li key={source.source}><Link to={`/${source.source}`}><i className={source.cfg.iconClass} aria-hidden="true" /></Link></li>);
+      }
     });
     return (
       <div className="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">

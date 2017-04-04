@@ -31,8 +31,14 @@ class Head extends React.Component {
   }
   render() {
     const cs = this.props.cs;
-    const title = cs.cfg ? cs.cfg.titlePlural : 'None';
-    const iconClass = cs.cfg.iconClass;
+    let title = 'None';
+    let iconClass = null;
+    let noShowNewBut = true;
+    if(cs.cfg){
+      title = cs.cfg.titlePlural;
+      iconClass = cs.cfg.iconClass;
+      noShowNewBut = cs.cfg.view && cs.cfg.view['new'] === false;
+    }
     const source = this.props.params.source;
     const url = `/${source}`;
     const urlFirst = `${url}/first`;
@@ -45,7 +51,7 @@ class Head extends React.Component {
     if (search) {
       searchCancel = <button className="btn btn-default red" type="button" onClick={this.searchClear}><i className="fa fa-times" /></button>;
     }
-    const noShowNewBut = (cs.cfg.view && (cs.cfg.view['new'] === false)); // eslint-disable-line dot-notation
+
     const buts = [];
     if (source === 'photo') {
       buts.push(<Link key="9" className="btn btn-primary btn-sm" to={{ pathname: url, query: { listview: 'gallery' } }} ><i className="fa fa-picture-o" />Gallery</Link>);
