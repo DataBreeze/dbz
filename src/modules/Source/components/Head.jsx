@@ -31,7 +31,7 @@ class Head extends React.Component {
   }
   render() {
     const cs = this.props.cs;
-    const title = cs.cfg.titlePlural;
+    const title = cs.cfg ? cs.cfg.titlePlural : 'None';
     const iconClass = cs.cfg.iconClass;
     const source = this.props.params.source;
     const url = `/${source}`;

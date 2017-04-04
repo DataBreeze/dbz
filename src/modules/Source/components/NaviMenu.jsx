@@ -23,7 +23,7 @@ class NaviMenu extends React.Component {
     sources.forEach((source) => {
       menus.push(
         <MenuItem name={source.source} key={source.source} onClick={this.goToSource} eventKey={source.cfg.menu.order}>
-          <i name={source.source} className={source.cfg.iconClass} aria-hidden="true" />{source.cfg.titlePlural}
+          <i name={source.source} className={source.cfg.iconClass} aria-hidden="true" />{ source.cfg ? source.cfg.titlePlural : 'None'}
         </MenuItem>,
       );
       return true;
