@@ -13,7 +13,6 @@ const WebpackTools = require('webpack-isomorphic-tools');
 const webpackToolsConfig = require('../webpack.isomorphic.tools');
 const port = 3000;
 global.webpackTools = new WebpackTools(webpackToolsConfig)
-  .development(global.__DEV__)
   .server(basePath, () => {
     const server = require(basePath)
     server.listen(port, () => {
