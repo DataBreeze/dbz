@@ -20,7 +20,7 @@ export default {
         apiUserPath: '/api/u/',
       },
       s3: {
-        host: 'https://s3-us-west-1.amazonaws.com/fishblab/i/',
+        host: 'https://s3-us-west-1.amazonaws.com/[yourbucketname]/[yourPath]/',
       },
     },
     showLoginNew: false,

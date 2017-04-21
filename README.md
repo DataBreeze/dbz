@@ -31,4 +31,4 @@ The idea is to provide a complete and functional framework to quickly build web 
 
 ### Setup the [Databreeze API Server](https://github.com/DataBreeze/dbzApi)
 
-### Configure your mongoose data sources
+### Configure your data sources
