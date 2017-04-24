@@ -1,42 +1,23 @@
-# Create and Edit the initialState.js file
+# Databreeze documentation for the src directory
 
 ----
-## You must create and edit the initialState.js file
-
-`cp src/initialState.js.example src/initialState.js`
-
-----
-## Edit the initialState.js file
-
-Within this file you will find a json object that will be utilized by the Databreeze system to initialize and display many settings.
-
-This file will also be used by redux to store state.
+## src/actions
+contains redux actions for user authentication and data sources.
 
 ----
-## Sections of the file.
+## src/dbz - library files
 
-- user: system use for user/auth
+----
+## src/modules - Meat and potatoes of the application.
 
-- app.cfg.logoClass: font-awesome icon to be used to left of logoTitle
+- src/modules/App/components/Auth/[](https://github.com/DataBreeze/dbz/tree/master/src/modules/App/components/Auth) for account creation, login, etc
 
-- app.cfg.homeUrl: the URL for the application home
+- [src/modules/Source/components/](https://github.com/DataBreeze/dbz/tree/master/src/modules/Source/components) the data source files containing the majority of the system code.  
 
-- app.cfg.homeLabel: Name that appears to right of logo
+----
+## initialState.js configuration
 
-- app.cfg.fetch.apiHost: URL of host used by fetchjs for API calls. Change this to your API host.
+- [src.initialState.js.README](https://github.com/DataBreeze/dbz/blob/master/src/initialState.js.README.md)
+- [src/initialState.js.example](https://github.com/DataBreeze/dbz/blob/master/src/initialState.js.example)
 
-- app.cfg.fetch.apiSourcePath: The path for data source calls, no need to change this unless you modify the API Server routes.
-
-- app.cfg.fetch.apiUserPath: The path used for User Auth. No need to change this unless you modify the API server routes.
-
-- app.cfg.s3.host: The full host URL to your S3 bucket e.g. 'https://s3-us-west-1.amazonaws.com/[yourbucketname]/[yourPath]/'
-
-- defaultSource: $yourDefaultSource used by the [router](https://github.com/DataBreeze/dbz/blob/master/src/routes.jsx) as the default data source if none is specified e.g. localhost redirects to localhost/$yourDefaultSource
-
-- **source: Of prime importance** Your data source configuration. You should retain `user` and `photo` as these are used by the system.
-
-- Add your own source, e.g.
-
-- source.sources.$yourSourceName.source: $yourSourceName
-
-- source.sources.$yourSourceName.source.cfg: includes title, titlePlural, detail (descriptive title), iconClass (font-awesome icon), menu.show (true/flase include in system menu), menu.order (number - menu order), view.new (true/false won't show link for new record creation) 
+You must create your own initialState.js file and configure it correctly for the system to work. View the [initialState.js.README.md](https://github.com/DataBreeze/dbz/blob/master/src/initialState.js.README.md) for more detail
