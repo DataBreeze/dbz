@@ -1,5 +1,7 @@
 # Databreeze documentation for the src directory
 
+This directory contains all of the application specific files and directories.
+
 ----
 ## src/actions
 contains redux actions for user authentication and data sources.
@@ -10,7 +12,7 @@ contains redux actions for user authentication and data sources.
 ----
 ## src/modules - Meat and potatoes of the application.
 
-- src/modules/App/components/Auth/[](https://github.com/DataBreeze/dbz/tree/master/src/modules/App/components/Auth) for account creation, login, etc
+- [src/modules/App/components/Auth/](https://github.com/DataBreeze/dbz/tree/master/src/modules/App/components/Auth) for account creation, login, etc
 
 - [src/modules/Source/components/](https://github.com/DataBreeze/dbz/tree/master/src/modules/Source/components) the data source files containing the majority of the system code.  
 
