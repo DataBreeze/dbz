@@ -42,3 +42,9 @@ This component is selected by default
 - [IndexRight.jsx](https://github.com/DataBreeze/dbz/blob/master/src/modules/Source/components/IndexRight.jsx) Determines the right side display of Index view.
 
 - [IndexRec.jsx](https://github.com/DataBreeze/dbz/blob/master/src/modules/Source/components/IndexRec.jsx) Display of each individual record for the Index view.
+
+----
+## Author
+
+Joe Junkin 
+[joe.junkin.com](http://joe.junkin.com)

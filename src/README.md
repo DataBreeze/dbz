@@ -27,3 +27,9 @@ Meat and potatoes of the application.
 ----
 ## [src/routes.jsx](https://github.com/DataBreeze/dbz/blob/master/src/routes.jsx)
 Explore the routing configuration
+
+----
+## Author
+
+Joe Junkin 
+[joe.junkin.com](http://joe.junkin.com)
