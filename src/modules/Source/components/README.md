@@ -5,13 +5,13 @@ The Source/components directory contains all of the Data Source React Components
 ----
 ## Four Modes for each source.
 
-- **Multi** Mode - displays multiple records in a list, table or index view.
+- **Multi** Mode - displays multiple records in a list, table or index view. MultiInit.jsx, MultiSwitch.jsx and others.
 
-- **Detail** Mode - Displays a single record in a read only view
+- **Detail** Mode - Displays a single record in a read only view. DetailInit.jsx, DetailSwitch.jsx and others.
 
-- **Edit** Mode - Displays a single record in an Edit form for editing
+- **Edit** Mode - Displays a single record in an Edit form for editing. EditInit.jsx, EditSwitch.jsx, and others.
 
-- **New** Mode - Displays a blank form for creating a new record
+- **New** Mode - Displays a blank form for creating a new record. NewInit.jsx, NewSwitch.jsxand  others.
 
 ----
 ## Init component (e.g. MultiInit.jsx)
