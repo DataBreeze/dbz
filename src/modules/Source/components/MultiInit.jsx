@@ -7,12 +7,11 @@ import MultiSwitch from './MultiSwitch';
 class MultiInit extends React.Component {
   componentWillReceiveProps(next) {
     const dispatch = this.props.dispatch;
-    const sourceState = this.props.dispatch(Act.getCurrentState());
     const source = next.params.source || 'spot';
     const listView = next.location.query.listview || false;
     const p = { source };
     // PROCESS NON-FETCH PARAMETERS INTO STATE
-    if (listView && (listView !== sourceState.listView)) {
+    if (listView && (listView !== next.listView)) {
       p.listView = listView;
       p.needsRender = true;
       dispatch(Act.updateListView(p));
@@ -23,18 +22,17 @@ class MultiInit extends React.Component {
       dispatch(Act.updateSearch(p));
       dispatch(Act.loadRecords(p));
     }
-    if ((sourceState.dirtyList === true) && (!sourceState.isFetching)) {
+    if ((next.dirtyList === true) && (!next.isFetching)) {
       dispatch(Act.loadRecords(p));
     }
   }
-  shouldComponentUpdate() {
-    const state = this.getCurrentState();
+  shouldComponentUpdate(next) {
     let shouldUpdate = false;
-    if (state.isFetching) {
+    if (next.isFetching) {
       shouldUpdate = false;
-    } else if (state.newData) {
+    } else if (next.newData) {
       shouldUpdate = true;
-    } else if (state.needsRender) {
+    } else if (next.needsRender) {
       shouldUpdate = true;
     } else {
       shouldUpdate = false;
@@ -43,9 +41,6 @@ class MultiInit extends React.Component {
   }
   componentDidUpdate() {
     this.props.dispatch(Act.componentUpdated({ source: this.props.params.source }));
-  }
-  getReduxState() {
-    return this.props.dispatch(Act.getState());
   }
   getCurrentState() {
     return this.props.dispatch(Act.getCurrentState());
@@ -100,6 +95,8 @@ const mapStateToProps = (state) => {
     stats: Act.getStats(state),
     isFetching: cs.isFetching,
     listView: cs.listView,
+    dirtyList: cs.dirtyList,
+    needsRender: cs.needsRender,
     csCfg: cs.cfg,
     cfg: state.app.cfg,
   };

@@ -37,6 +37,6 @@ This file will also be used by redux to store state.
 
 - Add your own source, e.g.
 
-- source.sources.$yourSourceName.source: $yourSourceName
+- source.sources.$yourSourceName.source: $yourSourceName. The name you use here should not contain spaces. It will be used in the url to call your source. It will lso be used for the ajax API calls.
 
 - source.sources.$yourSourceName.source.cfg: includes title, titlePlural, detail (descriptive title), iconClass (font-awesome icon), menu.show (true/flase include in system menu), menu.order (number - menu order), view.new (true/false won't show link for new record creation) 

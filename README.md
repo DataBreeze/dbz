@@ -49,9 +49,6 @@ This application utilizes Redux connect actions to dispatch asyncronous fetch AP
 The idea is to provide a complete and functional framework to quickly build web applications. Databreeze is designed so you can customize your views of data and utilize the framework to fetch and load data and state. Use Databreeze to learn how to use React, Redux and React-Router or configure your own application using the application.
 
 
-# Install, setup and Configuration
-----
-
 ## Download and install
 
 `git clone https://github.com/databreeze/dbz`
@@ -60,19 +57,13 @@ The idea is to provide a complete and functional framework to quickly build web 
 
 `npm install`
 
-----
-## Create Main Configuration File
-
-`cp src/initialState.js.example src/initialState.js`
 
 ----
-## Edit initialState.js
-[src/initialState.js.README.md](https://github.com/DataBreeze/dbz/tree/master/src/initialState.js.README.md)
+## Explore main documentation
 
-----
-## Configure/Code your data sources
+- [src/](https://github.com/DataBreeze/dbz/tree/master/src)
 
-[src/modules/Source/components](https://github.com/DataBreeze/dbz/tree/master/src/modules/Source/components)
+- [src/README.md](https://github.com/DataBreeze/dbz/tree/master/src/README.md)
 
 ----
 ## Setup the API Server
